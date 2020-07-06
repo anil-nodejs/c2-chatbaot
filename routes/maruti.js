@@ -90,4 +90,93 @@ app.get('/bot', (req, res) => {
         res.sendStatus(403);
     }
 });
+
+//post reques for bot
+
+
+app.post('/bot', (req, res) => {
+    let data = req.body;
+    res.sendStatus(200);
+    if (data.object === 'page') {
+        data.entry.forEach(entry => {
+            entry.messaging.forEach(event => {
+                if (event.sender == undefined || event.sender.id == undefined) {
+                    return;
+                }
+                let senderID = event.sender.id;
+                if (event.delivery != undefined) {
+                    deliveryReport(senderID);
+                    return;
+                }
+                let message = event.message;
+                User.findOne({ fbid: senderID }).exec((err, user) => {
+                    if (!err) {
+                        // New User
+                        if (user == null) {
+                            console.log("new user");
+                            let newUser = User();
+                            newUser.fbid = senderID;
+                            newUser.first_name = "";
+                            newUser.last_name = "";
+                            newUser.lastAction = "get started";
+                            newUser.getstarted_clicks = 1;
+                            newUser.save((err, user) => {
+                                if (!err) {
+                                    getData(senderID);
+                                    /* getstarted(senderID); */
+                                }
+                                else {
+                                    console.log("err 1");
+                                    console.log(err);
+                                }
+                            });
+                        }
+                        //Old user
+                        else {
+                            console.log("Old user");
+
+                            if (user.first_name == "" || user.first_name == null) {
+                                getData1(senderID);
+                            }
+
+                            let eventAction = "";
+                            if (event.message != undefined && event.message.quick_reply != undefined) {
+                                eventAction = event.message.quick_reply.payload;
+                                quickReplyRequest(senderID, eventAction);
+                            }
+                            else if (event.message != undefined && event.message.text != undefined) {
+                                textMessageRequest(senderID, event.message.text.toLowerCase(),user);
+                            }
+                            else if (event.message != undefined && event.message.attachments != undefined) {
+                                attachmentsRequest(senderID, event.message.attachments, user);
+                            }
+                            else {
+                                if (event.postback != undefined && event.postback.payload != undefined) {
+                                    eventAction = event.postback.payload;
+                                    postbackRequest(senderID, eventAction, user);
+                                }
+                                else {
+                                    defaultMessage(senderID);
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        console.log("err");
+                        console.log(err);
+                    }
+                });
+
+            });
+        });
+    }
+});
+
+function getstarted(senderID, user) {
+    sendTextMessage(senderID, "Hey " + user.first_name + "! It's that time of the year again. We are back with our presence at Auto Expo. Tell us, what would you like to know");
+
+    setTimeout(() => {
+        sendItems(senderID, 'level_1Obj');
+    }, 500);
+}
 module.exports=app
