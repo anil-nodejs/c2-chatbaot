@@ -4,10 +4,10 @@ const mongoose=require('mongoose')
 var router=express.Router();
 // mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb+srv://sbycc2020:' + encodeURIComponent('sbycc@anilyadav21') + '@mongodb01-z7hcd.mongodb.net/chatbot2020?retryWrites=true", {useNewUrlParser: true,useUnifiedTopology:true}, (ignore, connection) => {
-    const db = mongoose.connection; 
-console.log("mongo is connected"+db);
-   
+mongoose.connect("mongodb://aa_chatbot2020:7n!mT5e5dceAs_5@ds041432.mlab.com:41432/heroku_kx5wjtrh", {useNewUrlParser: true,useUnifiedTopology:true}, (ignore, connection) => {
+    connection.onOpen();
+console.log("mongo is connected");
+
 });
 //main route
 router.get('/',(req,res)=>
