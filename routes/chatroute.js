@@ -6,6 +6,7 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect("mongodb+srv://sbycc2020:' + encodeURIComponent('sbycc@anilyadav21') + '@mongodb01-z7hcd.mongodb.net/c2chatbot2020?retryWrites=true", {useNewUrlParser: true,useUnifiedTopology:true}, (ignore, connection) => {
    console.log("mongo is connected");
+   connection.onOpen();
 });
 //main route
 router.get('/',(req,res)=>
@@ -13,6 +14,6 @@ router.get('/',(req,res)=>
 res.send("Working");
 });
 
-//
+// 
 
 module.exports=router;
