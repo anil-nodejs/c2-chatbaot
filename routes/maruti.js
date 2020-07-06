@@ -179,4 +179,180 @@ function getstarted(senderID, user) {
         sendItems(senderID, 'level_1Obj');
     }, 500);
 }
+
+
+
+app.get('/open/:fbid/:story', (req, res) => {
+    let fbid = parseInt(req.params.fbid) || 0;
+    let story = req.params.story || null;
+    console.log("fbid", fbid, "story", story);
+
+    const data = {
+        "Mission_Green_Million_lnk": "https://www.marutisuzuki.com/auto-expo-2020/mission-green-million.html",
+        "Venue_of_Auto_Expo_lnk": "https://goo.gl/maps/e3WgR91vRNkroHLe6",
+        "Dates_Timings_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
+        "Book_My_Tickets_lnk": "https://in.bookmyshow.com/national-capital-region-ncr/events/auto-expo-the-motor-show-2020/ET00118921",
+        "Ignis_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Brezza_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Swift_Hybrid_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Jimny_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Concept_FUTURO_e_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "About_Maruti_Suzuki_Studio_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
+        "Studio_Spotlight_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
+        "Twitter_Green_Room_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
+        "Studio_Schedule_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
+        "Ertiga_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "S_presso_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "WagonR_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Celerio_X_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Vitara_Brezza_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "EECO_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Celerio_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Alto_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Swift_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "DZire_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Ignis_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "XL6_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "S_Cross_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Baleno_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Ciaz_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+        "Maruti_Suzuki_Arena_btn_lnk": "https://www.marutisuzuki.com/corporate/reach-us/contact-us#write-to-us",
+        "Maruti_Suzuki_Nexa_btn_lnk": "https://www.nexaexperience.com/contact-us/",
+        "Maruti_Suzuki_True_Value_btn_lnk": "https://www.marutisuzukitruevalue.com/contact",
+        "Maruti_Suzuki_Commercial_btn_lnk": "http://www.marutisuzukicommercial.com/#enq_popup",
+        "Maruti_Suzuki_Arena_loc_btn_lnk": "https://www.marutisuzuki.com/channels/arena/locate-a-dealer",
+        "Maruti_Suzuki_Nexa_loc_btn_lnk": "https://www.nexaexperience.com/showroom-locator/",
+        "Maruti_Suzuki_True_Value_loc_btn_lnk": "https://www.marutisuzukitruevalue.com/dealerlocator/",
+        "Maruti_Suzuki_Commercial_loc_btn_lnk": "http://www.marutisuzukicommercial.com/find-dealer.html",
+        "About_Maruti_Suzuki_btn_lnk": "https://www.marutisuzuki.com/corporate/about-us",
+        "Maruti_Suzuki_Arena_about_btn_lnk": "https://www.marutisuzuki.com/channels/arena/all-cars",
+        "Maruti_Suzuki_Nexa_about_btn_lnk": "https://www.nexaexperience.com/",
+        "Maruti_Suzuki_True_Value_about_btn_lnk": "https://www.marutisuzukitruevalue.com/",
+        "Maruti_Suzuki_Commercial_about_btn_lnk": "http://www.marutisuzukicommercial.com/"
+    };
+
+    if (data[story]) {
+        User.findOneAndUpdate(
+            { fbid: fbid },
+            { $inc: { [story]: 1 } },
+            { upsert: false },
+            (err, user) => {
+            });
+        res.redirect(data[story]);
+    } else {
+        res.redirect("https://www.marutisuzuki.com/auto-expo-2020/");
+    }
+});
+
+function deliveryReport(senderID) {
+    User.findOne({ fbid: senderID }).exec((err, user) => {
+        if (!err && user) {
+            if (user.lastAction == "done") {
+                User.findOneAndUpdate(
+                    { fbid: senderID },
+                    { $set: { "lastAction": "end" } },
+                    { upsert: false },
+                    (err, user) => {
+                        //getstarted(senderID, user);
+                    });
+            }
+        }
+    });
+}
+
+function getData(senderID) {
+    rp({
+        uri: 'https://graph.facebook.com/v4.0/' + senderID,
+        qs: {
+            access_token: access_token,
+            fields: 'first_name,last_name'
+        },
+        method: 'GET'
+    })
+        .then(response => {
+            let data = JSON.parse(response);
+            User.findOneAndUpdate(
+                { fbid: senderID },
+                { $set: { "first_name": data.first_name, "last_name": data.last_name } },
+                { upsert: false },
+                (err, user) => {
+                    user.first_name = data.first_name;
+                    getstarted(senderID, user);
+                });
+        })
+        .catch(error => {
+
+        });
+}
+function getData1(senderID) {
+    rp({
+        uri: 'https://graph.facebook.com/v4.0/' + senderID,
+        qs: {
+            access_token: access_token,
+            fields: 'first_name,last_name'
+        },
+        method: 'GET'
+    })
+        .then(response => {
+            let data = JSON.parse(response);
+            User.findOneAndUpdate(
+                { fbid: senderID },
+                { $set: { "first_name": data.first_name, "last_name": data.last_name } },
+                { upsert: false },
+                (err, user) => {
+                });
+        })
+        .catch(error => {
+
+        });
+}
+
+function quickReplyRequest(senderID, eventAction) {
+    if (eventAction == "pic_count_2") {
+
+    }
+    else {
+        defaultMessage(senderID);
+    }
+}
+
+function textMessageRequest(senderID, text, user) {
+    if (text == "get started") {
+        getstarted(senderID, user);
+        User.findOneAndUpdate(
+            { fbid: senderID },
+            { $inc: { "getstarted_clicks": 1 } },
+            { upsert: false },
+            function (err, user) {
+            });
+    }
+    else if (text == "restart") {
+        getstarted(senderID, user);
+        User.findOneAndUpdate(
+            { fbid: senderID },
+            { $inc: { "restart_clicks": 1 } },
+            { upsert: false },
+            function (err, user) {
+            });
+    }
+    else {
+        defaultMessage(senderID);
+    }
+}
+
+function attachmentsRequest(senderID, attachments, user) {
+    defaultMessage(senderID);
+}
+
+function postbackRequest(senderID, eventAction, user) {
+    if (eventAction == "getStarted") {
+        getstarted(senderID, user);
+        User.findOneAndUpdate(
+            { fbid: senderID },
+            { $inc: { "getstarted_clicks": 1 } },
+            { upsert: false },
+            function (err, user) {
+            });
+    }
+}
 module.exports=app
