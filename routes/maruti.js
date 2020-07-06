@@ -354,5 +354,15 @@ function postbackRequest(senderID, eventAction, user) {
             function (err, user) {
             });
     }
+
+    else if (eventAction == "restart") {
+        getstarted(senderID, user);
+        User.findOneAndUpdate(
+            { fbid: senderID },
+            { $inc: { "restart_clicks": 1 } },
+            { upsert: false },
+            function (err, user) {
+            });
+    }
 }
 module.exports=app

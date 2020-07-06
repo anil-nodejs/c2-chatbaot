@@ -9,7 +9,9 @@ var userSchema=new Schema({
     Mission_Green_Million: { type: Number, default: 0 },
     whats_happening: { type: Number, default: 0 },
     restart: { type: Number, default: 0 },
-
+    getstarted_clicks: { type: Number, default: 0 },
+    restart_clicks: { type: Number, default: 0 },
+    
 
 });
 
