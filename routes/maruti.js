@@ -84,7 +84,7 @@ app.get('/menu', (req, res) => {
 
 app.get('/bot', (req, res) => {
     if (req.query['hub.mode'] === 'subscribe' &&
-        req.query['hub.verify_token'] === "anilyadav_chatbotDemo2020") {
+        req.query['hub.verify_token'] === "96529652959") {
         res.status(200).send(req.query['hub.challenge']);
     } else {
         res.sendStatus(403);
