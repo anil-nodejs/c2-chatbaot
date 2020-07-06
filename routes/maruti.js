@@ -2,7 +2,7 @@ const bodyParser = require('body-parser'),
     express = require('express'),
     request = require('request'),
     rp = require('request-promise');
-const router = require('./chatroute');
+// const router = require('./chatroute');
 const app=express();
 const URL='https://c2-chatbot.herokuapp.com/maruti/open';
 app.use(bodyParser.json());
