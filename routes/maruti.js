@@ -453,63 +453,64 @@ function sendItems(senderID, Obj) {
 
     /* Level 1 */
     data.level_1Obj = {
-    //     "attachment": {
-    //         "type": "template",
-    //         "payload": {
-    //             "template_type": "generic",
-    //             "elements": [
-    //                 {
-    //                     "title": "What's happening at Auto Expo 2020",
-    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/1.jpg",
-    //                     "buttons": [
-    //                         {
-    //                             "type": "postback",
-    //                             "title": "Explore",
-    //                             "payload": "whats_happening"
-    //                         }
-    //                     ]
-    //                 },
-    //                 //Eralier All Maruti Suzuki Cars
-    //                 {
-    //                     "title": "Browse Car Models",
-    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/9.jpg?v=1",
-    //                     "buttons": [
-    //                         {
-    //                             "type": "postback",
-    //                             "title": "Explore",
-    //                             "payload": "all_maruti_suzuki_cars"
-    //                         }
-    //                     ]
-    //                 },
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [
+                    {
+                        "title": "What's happening at Auto Expo 2020",
+                        "image_url": "https://c2-chatbot.herokuapp.com/images/1.jpg",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Explore",
+                                "payload": "whats_happening"
+                            }
+                        ]
+                    },
+                    //Eralier All Maruti Suzuki Cars
+                    {
+                        "title": "Browse Car Models",
+                        "image_url": "https://c2-chatbot.herokuapp.com/images/9.jpg?v=1",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Explore",
+                                "payload": "all_maruti_suzuki_cars"
+                            }
+                        ]
+                    },
 
-    //                 {
-    //                     "title": "Enquiries & Other Details",
-    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/10.jpg",
-    //                     "buttons": [
-    //                         {
-    //                             "type": "postback",
-    //                             "title": "Explore",
-    //                             "payload": "enquiries"
-    //                         }
-    //                     ]
-    //                 },
+                    {
+                        "title": "Enquiries & Other Details",
+                        "image_url": "https://c2-chatbot.herokuapp.com/images/10.jpg",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Explore",
+                                "payload": "enquiries"
+                            }
+                        ]
+                    },
 
-    //                 {
-    //                     "title": "Know more About Us",
-    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/11.jpg",
-    //                     "buttons": [
-    //                         {
-    //                             "type": "postback",
-    //                             "title": "Explore",
-    //                             "payload": "know_more_about_us"
-    //                         }
-    //                     ],
+                    {
+                        "title": "Know more About Us",
+                        "image_url": "https://c2-chatbot.herokuapp.com/images/11.jpg",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Explore",
+                                "payload": "know_more_about_us"
+                            }
+                        ],
 
-    //                 }
-    //             ]
-    //         }
-    //     }
-    // };
+                    }
+                ]
+            }
+        }
+    };
+
 
     //  /* Level 2 */
     //  data.whats_happening = {
@@ -604,6 +605,8 @@ function sendItems(senderID, Obj) {
     //                     ],
 
     //                 },
+
+
     //                 //Earlier Cars at Display
     //                 {
     //                     "title": "Exclusive Array",
@@ -643,7 +646,7 @@ function sendItems(senderID, Obj) {
     //             ]
     //         }
     //     }
-    };
+    
     sendGenericMessage(senderID, data[Obj]);
 }
 module.exports=app
