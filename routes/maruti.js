@@ -453,197 +453,197 @@ function sendItems(senderID, Obj) {
 
     /* Level 1 */
     data.level_1Obj = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [
-                    {
-                        "title": "What's happening at Auto Expo 2020",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/1.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "whats_happening"
-                            }
-                        ]
-                    },
-                    //Eralier All Maruti Suzuki Cars
-                    {
-                        "title": "Browse Car Models",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/9.jpg?v=1",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "all_maruti_suzuki_cars"
-                            }
-                        ]
-                    },
+    //     "attachment": {
+    //         "type": "template",
+    //         "payload": {
+    //             "template_type": "generic",
+    //             "elements": [
+    //                 {
+    //                     "title": "What's happening at Auto Expo 2020",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/1.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "whats_happening"
+    //                         }
+    //                     ]
+    //                 },
+    //                 //Eralier All Maruti Suzuki Cars
+    //                 {
+    //                     "title": "Browse Car Models",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/9.jpg?v=1",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "all_maruti_suzuki_cars"
+    //                         }
+    //                     ]
+    //                 },
 
-                    {
-                        "title": "Enquiries & Other Details",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/10.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "enquiries"
-                            }
-                        ]
-                    },
+    //                 {
+    //                     "title": "Enquiries & Other Details",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/10.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "enquiries"
+    //                         }
+    //                     ]
+    //                 },
 
-                    {
-                        "title": "Know more About Us",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/11.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "know_more_about_us"
-                            }
-                        ],
+    //                 {
+    //                     "title": "Know more About Us",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/11.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "know_more_about_us"
+    //                         }
+    //                     ],
 
-                    }
-                ]
-            }
-        }
-    };
+    //                 }
+    //             ]
+    //         }
+    //     }
+    // };
 
-     /* Level 2 */
-     data.whats_happening = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [
-                    {
-                        "title": "Mission Green Million",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/2.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Mission_Green_Million"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ]
-                    },
+    //  /* Level 2 */
+    //  data.whats_happening = {
+    //     "attachment": {
+    //         "type": "template",
+    //         "payload": {
+    //             "template_type": "generic",
+    //             "elements": [
+    //                 {
+    //                     "title": "Mission Green Million",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/2.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "Mission_Green_Million"
+    //                         },
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Home",
+    //                             "payload": "level_1"
+    //                         }
+    //                     ]
+    //                 },
 
-                    {
-                        "title": "Venue of Auto Expo",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/3.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Venue_of_Auto_Expo"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ]
-                    },
+    //                 {
+    //                     "title": "Venue of Auto Expo",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/3.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "Venue_of_Auto_Expo"
+    //                         },
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Home",
+    //                             "payload": "level_1"
+    //                         }
+    //                     ]
+    //                 },
 
-                    {
-                        "title": "Dates & Timings",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/4.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Dates_Timings"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ]
-                    },
+    //                 {
+    //                     "title": "Dates & Timings",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/4.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "Dates_Timings"
+    //                         },
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Home",
+    //                             "payload": "level_1"
+    //                         }
+    //                     ]
+    //                 },
 
-                    {
-                        "title": "Book My Tickets",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/5.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Book_My_Tickets"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ],
+    //                 {
+    //                     "title": "Book My Tickets",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/5.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "Book_My_Tickets"
+    //                         },
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Home",
+    //                             "payload": "level_1"
+    //                         }
+    //                     ],
 
-                    },
+    //                 },
 
-                    {
-                        "title": "New Launches",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/6.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "New_Launches"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ],
+    //                 {
+    //                     "title": "New Launches",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/6.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "New_Launches"
+    //                         },
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Home",
+    //                             "payload": "level_1"
+    //                         }
+    //                     ],
 
-                    },
-                    //Earlier Cars at Display
-                    {
-                        "title": "Exclusive Array",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/7.jpg?v=1",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Cars_at_Display"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ],
+    //                 },
+    //                 //Earlier Cars at Display
+    //                 {
+    //                     "title": "Exclusive Array",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/7.jpg?v=1",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "Cars_at_Display"
+    //                         },
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Home",
+    //                             "payload": "level_1"
+    //                         }
+    //                     ],
 
-                    },
+    //                 },
 
-                    {
-                        "title": "Maruti Suzuki Studio",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/8.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Maruti_Suzuki_Studio"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ],
+    //                 {
+    //                     "title": "Maruti Suzuki Studio",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/8.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "Maruti_Suzuki_Studio"
+    //                         },
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Home",
+    //                             "payload": "level_1"
+    //                         }
+    //                     ],
 
-                    }
-                ]
-            }
-        }
-    };
+    //                 }
+    //             ]
+    //         }
+    //     }
+    // };
     sendGenericMessage(senderID, data[Obj]);
 }
 module.exports=app
