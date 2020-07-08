@@ -4,7 +4,7 @@ const bodyParser = require('body-parser'),
     rp = require('request-promise');
 // const router = require('./chatroute');
 const app=express();
-const URL='https://c2-chatbot.herokuapp.com/maruti/open';
+// const URL='https://c2-chatbot.herokuapp.com/maruti/open';
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
