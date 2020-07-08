@@ -9,7 +9,7 @@ const port =9000;
 const chatRoute=require('./routes/chatroute');
 app.use('/',chatRoute);
 
-const marutiRoute=require('./routes/maruti');
+const marutiRoute=require('./routes/maruti2');
 app.use('/maruti',marutiRoute);
 // end path
 
