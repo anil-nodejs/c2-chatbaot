@@ -1113,7 +1113,7 @@ function sendItems(senderID, Obj) {
                 "elements": [
                     {
                         "title": "What's happening at Auto Expo 2020",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/1.jpg",
+                        "image_url": "https://c2-chatbot.herokuapp.com/images/1.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1125,7 +1125,7 @@ function sendItems(senderID, Obj) {
                     //Eralier All Maruti Suzuki Cars
                     {
                         "title": "Browse Car Models",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/9.jpg?v=1",
+                        "image_url": "https://c2-chatbot.herokuapp.com/images/9.jpg?v=1",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1137,7 +1137,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Enquiries & Other Details",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/10.jpg",
+                        "image_url": "https://c2-chatbot.herokuapp.com/images/10.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1149,7 +1149,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Know more About Us",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/11.jpg",
+                        "image_url": "https://c2-chatbot.herokuapp.com/images/11.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
