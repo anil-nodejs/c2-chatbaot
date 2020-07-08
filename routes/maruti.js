@@ -1052,4 +1052,116 @@ function postbackRequest(senderID, eventAction, user) {
     }
 
 }
+
+
+function defaultMessage(senderID) {
+    sendItems(senderID, "level_1Obj");
+}
+
+function sendTextMessage(recipientId, messageText) {
+    let messageData = {
+        recipient: {
+            id: recipientId
+        },
+        message: {
+            text: messageText
+        }
+    };
+    callSendAPI(messageData);
+}
+
+function sendGenericMessage(recipientId, messageObj) {
+    let messageData = {
+        recipient: {
+            id: recipientId
+        },
+        message: messageObj
+    };
+    callSendAPI(messageData);
+}
+
+function callSendAPI(messageData) {
+    rp({
+        uri: 'https://graph.facebook.com/v4.0/me/messages',
+        qs: {
+            access_token: access_token
+        },
+        method: 'POST',
+        json: messageData
+    })
+        .then(response => {
+            /* console.log("XXXXXXXXXXXXXXXXXXX response XXXXXXXXXXXXXXX");
+            console.log(response);
+            console.log("XXXXXXXXXXXXXXXXXXX response XXXXXXXXXXXXXXX"); */
+        })
+        .catch(error => {
+            console.log("XXXXXXXXXXXXXXXXXXX error XXXXXXXXXXXXXXX");
+            console.log(error);
+            console.log("XXXXXXXXXXXXXXXXXXX error XXXXXXXXXXXXXXX");
+        });
+}
+
+function sendItems(senderID, Obj) {
+    let data = {};
+
+    /* Level 1 */
+    data.level_1Obj = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [
+                    {
+                        "title": "What's happening at Auto Expo 2020",
+                        "image_url": "https://maruti-auto-expo.herokuapp.com/1.jpg",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Explore",
+                                "payload": "whats_happening"
+                            }
+                        ]
+                    },
+                    //Eralier All Maruti Suzuki Cars
+                    {
+                        "title": "Browse Car Models",
+                        "image_url": "https://maruti-auto-expo.herokuapp.com/9.jpg?v=1",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Explore",
+                                "payload": "all_maruti_suzuki_cars"
+                            }
+                        ]
+                    },
+
+                    {
+                        "title": "Enquiries & Other Details",
+                        "image_url": "https://maruti-auto-expo.herokuapp.com/10.jpg",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Explore",
+                                "payload": "enquiries"
+                            }
+                        ]
+                    },
+
+                    {
+                        "title": "Know more About Us",
+                        "image_url": "https://maruti-auto-expo.herokuapp.com/11.jpg",
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "Explore",
+                                "payload": "know_more_about_us"
+                            }
+                        ],
+
+                    }
+                ]
+            }
+        }
+    };
+}
 module.exports=app
