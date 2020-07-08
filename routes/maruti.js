@@ -1163,7 +1163,6 @@ function sendItems(senderID, Obj) {
             }
         }
     };
-    
+    sendGenericMessage(senderID, data[Obj]);
 }
-sendGenericMessage(senderID, data[Obj]);
 module.exports=app
