@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname , 'public')));
 app.use(bodyParser.json());
 app.listen(process.env.PORT || port,()=>
 {
-    console.log("chatbot server is runnig... at",port);
+    console.log("chatbot server is runnig... at ",port);
 })
 
 module.exports=app;
