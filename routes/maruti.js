@@ -78,7 +78,24 @@ app.get('/menu', (req, res) => {
         });
 });
 
-
+    //remove routes
+app.get('/remove', (req, res) => {
+    rp({
+        uri: 'https://graph.facebook.com/v2.6/me/messenger_profile',
+        qs: {
+            access_token: access_token,
+            fields: ['get_started']
+        },
+        method: 'DELETE'
+    })
+    .then(response => {
+       console.log(response);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+    res.send('remove');
+});
 
 //bot added the verify token
 
@@ -90,6 +107,8 @@ app.get('/bot', (req, res) => {
         res.sendStatus(403);
     }
 });
+
+
 
 //post reques for bot
 
