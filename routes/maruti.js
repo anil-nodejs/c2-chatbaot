@@ -146,7 +146,7 @@ app.post('/bot', (req, res) => {
                                     postbackRequest(senderID, eventAction, user);
                                 }
                                 else {
-                                    defaultMessage(senderID);
+                                    // defaultMessage(senderID);
                                 }
                             }
                         }
