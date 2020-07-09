@@ -484,7 +484,7 @@ function postbackRequest(senderID, eventAction, user) {
 
 // function defaultMessage(senderID) {
 //     sendItems(senderID, "level_1Obj");
-// ///}
+// ///pkplp;.}
 
 function sendTextMessage(recipientId, messageText) {
     let messageData = {
