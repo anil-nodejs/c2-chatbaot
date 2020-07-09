@@ -139,8 +139,8 @@ app.post('/bot', (req, res) => {
                             newUser.getstarted_clicks = 1;
                             newUser.save((err, user) => {
                                 if (!err) {
-                                    getData(senderID);
-                                    /* getstarted(senderID); */
+                                    // getData(senderID);
+                                    getstarted(senderID);
                                 }
                                 else {
                                     console.log("err 1");
