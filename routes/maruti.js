@@ -363,7 +363,7 @@ function postbackRequest(senderID, eventAction, user) {
             { $inc: { "back_to_home": 1 } },
             { upsert: false },
             (err, user) => {
-                sendItems(senderID, "back_to_home");
+                sendItems(senderID, "level_1Obj");
             });
     }
     else if (eventAction == "whats_happening") {
