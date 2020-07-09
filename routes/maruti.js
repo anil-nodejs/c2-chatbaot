@@ -3,7 +3,7 @@ const bodyParser = require('body-parser'),
     request = require('request'),
     rp = require('request-promise');
 
-const URL = 'https://c2-chatbot.herokuapp.com/maruti/open';
+const URL = 'https://c2-chatbot.herokuapp.com/maruti/open/';
 var imageURL = 'https://c2-chatbot.herokuapp.com/images'
 const app = express.Router();
 app.use(bodyParser.json());
