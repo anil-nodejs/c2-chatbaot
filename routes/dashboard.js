@@ -10,7 +10,7 @@ const User = require('../models/User');
 app.get('/count/:fieldName/:key', (req, res) => {
     let fieldName = req.params.fieldName || null;
     let key = req.params.key || null;
-    if (key == "fienfiermckfmrfm") {
+    if (key == "alivenowchatBot2020") {
         if (fieldName == "total") {
             User.countDocuments({}, function (err, count) {
                 if (!err) {
@@ -35,7 +35,7 @@ app.get('/total/:fieldName/:key', (req, res) => {
     let fieldName = req.params.fieldName || null;
     let key = req.params.key || null;
     let columnName = ''
-    if (key == 'fienfiermckfmrfm') {
+    if (key == 'alivenowchatBot2020') {
         if (fieldName != null) {
             columnName = "$" + fieldName
         }
