@@ -435,14 +435,10 @@ function callSendAPI(messageData) {
         json: messageData
     })
         .then(response => {
-            /* console.log("XXXXXXXXXXXXXXXXXXX response XXXXXXXXXXXXXXX");
-            console.log(response);
-            console.log("XXXXXXXXXXXXXXXXXXX response XXXXXXXXXXXXXXX"); */
+            console.log("Chatbot22222222222222222 sucesss")
         })
         .catch(error => {
-            console.log("XXXXXXXXXXXXXXXXXXX error XXXXXXXXXXXXXXX");
-            console.log(error);
-            console.log("XXXXXXXXXXXXXXXXXXX error XXXXXXXXXXXXXXX");
+            console.log("Chatbot Errrrrrrrrrrrrrrrrrr");
         });
 }
 
@@ -641,7 +637,7 @@ function sendItems(senderID, Obj) {
                 ]
             }
         }
-    }
+    };
     sendGenericMessage(senderID, data[Obj]);
 }
 module.exports = app
