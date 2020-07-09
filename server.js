@@ -20,6 +20,9 @@ app.get('/', (req, res) => {
 })
 const marutiRoute = require('./routes/maruti.js');
 app.use('/maruti', marutiRoute);
+
+const marutiRoute = require('./routes/dashboard.js');
+app.use('/dashboard', marutiRoute);
 // end pathfredsdedvfdfcrjubhugbikjm;jm
 
 app.use(express.static(path.join(__dirname, 'public')));
