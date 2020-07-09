@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 var mongoose = require('mongoose');
 const app = express();
-const port = 9000;
+const port = process.env.PORT || 9000;
 
 //database
 mongoose.Promise = global.Promise;
@@ -25,8 +25,14 @@ app.use('/maruti', marutiRoute);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
-app.listen(process.env.PORT || port, () => {
-    console.log("chatbot server is runnig... at ", port);
+
+
+// app.listen(process.env.PORT || port, () => {
+//     console.log("chatbot server is runnig... at ", port);
+// })
+
+var server = require('http').Server(app);
+server.listen(port, () => {
+    console.log("C2- chatbot server is running...");
 })
 
-module.exports = app;
