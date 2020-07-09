@@ -139,8 +139,8 @@ app.post('/bot', (req, res) => {
                             newUser.getstarted_clicks = 1;
                             newUser.save((err, user) => {
                                 if (!err) {
-                                    // getData(senderID);
-                                    getstarted(senderID);
+                                    getData(senderID);
+                                    // getstarted(senderID);
                                 }
                                 else {
                                     console.log("err 1");
@@ -270,7 +270,7 @@ function deliveryReport(senderID) {
                     { $set: { "lastAction": "end" } },
                     { upsert: false },
                     (err, user) => {
-                        getstarted(senderID, user);
+                        // getstarted(senderID, user);
                     });
             }
         }
@@ -506,138 +506,7 @@ function sendItems(senderID, Obj) {
     };
 
     /* Level 2 */
-    data.whats_happening = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [
-                    {
-                        "title": "Mission Green Million",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/2.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Mission_Green_Million"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ]
-                    },
 
-                    {
-                        "title": "Venue of Auto Expo",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/3.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Venue_of_Auto_Expo"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ]
-                    },
-
-                    {
-                        "title": "Dates & Timings",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/4.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Dates_Timings"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ]
-                    },
-
-                    {
-                        "title": "Book My Tickets",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/5.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Book_My_Tickets"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ],
-
-                    },
-
-                    {
-                        "title": "New Launches",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/6.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "New_Launches"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ],
-
-                    },
-                    //Earlier Cars at Display
-                    {
-                        "title": "Exclusive Array",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/7.jpg?v=1",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Cars_at_Display"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ],
-
-                    },
-
-                    {
-                        "title": "Maruti Suzuki Studio",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/8.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "Maruti_Suzuki_Studio"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Home",
-                                "payload": "level_1"
-                            }
-                        ],
-
-                    }
-                ]
-            }
-        }
-    };
     sendGenericMessage(senderID, data[Obj]);
 }
 module.exports = app
