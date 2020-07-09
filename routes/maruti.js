@@ -643,7 +643,7 @@ function sendItems(senderID, Obj) {
                 ]
             }
         }
-    };0
-    // sendGenericMessage(senderID, data[Obj]);
+    }
+    sendGenericMessage(senderID, data[Obj]);
 }
 module.exports = app
