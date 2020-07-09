@@ -18,7 +18,7 @@ mongoose.connect("mongodb://c2_chatbot:MnsrVpD7Fv2!GGt@ds237357.mlab.com:37357/h
 app.get('/', (req, res) => {
     res.send("Working...");
 })
-const marutiRoute = require('./routes/maruti.js');
+const marutiRoute = require('./routes/m2.js');
 app.use('/maruti', marutiRoute);
 // end path
 
