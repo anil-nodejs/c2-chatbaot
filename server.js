@@ -6,9 +6,10 @@ const app=express();
 const port =process.env.PORT || 9000;
 
 
-mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://aa_chatbot2020:7n!mT5e5dceAs_5@ds041432.mlab.com:41432/heroku_f6wxmjw9", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, (ignore, connection) => {
+// mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://aa_chatbot2020:7n!mT5e5dceAs_5@ds041432.mlab.com:37357/heroku_f6wxmjw9", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, (ignore, connection) => {
     // connection.onOpen();
+    console.log("dekcmek")
 });
 
 app.get('/',(req,res)=>{
