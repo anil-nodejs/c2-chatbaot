@@ -27,3 +27,4 @@ server.listen(port, function () {
     console.log('C2 Chatbot server is running...at', port);
 });
 
+module.exports = app;
