@@ -137,10 +137,15 @@ app.post('/bot', (req, res) => {
                             newUser.last_name = "";
                             newUser.lastAction = "get started";
                             newUser.getstarted_clicks = 1;
+                            console.log(newUser);
                             newUser.save((err, user) => {
                                 if (!err) {
                                     getData(senderID);
                                     // getstarted(senderID);
+                                    console.log('====================================');
+                                    console.log("femimrmikvrmf");
+                                    console.log('====================================');
+
                                 }
                                 else {
                                     console.log("err 1");
