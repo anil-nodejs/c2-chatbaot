@@ -171,7 +171,7 @@ function getstarted(senderID, user) {
     sendTextMessage(senderID, "Hey " + user.first_name + "! It's that time of the year again. We are back with our presence at Auto Expo. Tell us, what would you like to know");
 
     setTimeout(() => {
-        sendItems(senderID, 'level_1Obj');
+        sendItems(senderID, '');
     }, 500);
 }
 
