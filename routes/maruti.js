@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 const access_token = "EAApXxrxbGs0BAH8iGRovQZADBVjlkW9ZBWzVTyWrdXNspxwKmV7qE1hNMuOgw5yDkBrO7G0ZAZBkaeZAXLE9pxqcSt1dI2KiacXJ2ZAEpvqDNcITPS9aNGWmz4noyHl9uyQUJZA6QZArRfveGdSi27G0IPbXxZBv5PFHjZC3k7KZA7Xzp9cZA6CxkCPm";
 const User = require('../models/User');
 
-//To add Get Started button
+//To add Get Started buttongrtgvtrgv
 app.get('/getStarted', (req, res) => {
     res.status(200).send("getStarted");
     rp({
