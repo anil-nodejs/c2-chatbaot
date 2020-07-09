@@ -272,13 +272,13 @@ app.post('/bot', (req, res) => {
     }
 });
 
-// function getstarted(senderID, user) {
-//     sendTextMessage(senderID, "Hey " + user.first_name + "! It's that time of the year again. We are back with our presence at C2-chatbot. Tell us, what would you like to know");
+function getstarted(senderID, user) {
+    sendTextMessage(senderID, "Hey " + user.first_name + "! It's that time of the year again. We are back with our presence at C2-chatbot. Tell us, what would you like to know");
 
-//     setTimeout(() => {
-//         sendItems(senderID, 'level_1Obj');
-//     }, 500);
-// }
+    setTimeout(() => {
+        sendItems(senderID, 'level_1Obj');
+    }, 500);
+}
 
 
 
