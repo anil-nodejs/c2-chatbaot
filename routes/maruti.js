@@ -140,7 +140,7 @@ app.post('/bot', (req, res) => {
                             newUser.save((err, user) => {
                                 if (!err) {
                                     // getData(senderID);
-                                    // getstarted(senderID);
+                                    getstarted(senderID);
                                 }
                                 else {
                                     console.log("err 1");
