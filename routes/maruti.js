@@ -270,7 +270,7 @@ function deliveryReport(senderID) {
                     { $set: { "lastAction": "end" } },
                     { upsert: false },
                     (err, user) => {
-                        // getstarted(senderID, user);
+                        getstarted(senderID, user);
                     });
             }
         }
