@@ -9,7 +9,7 @@ const port = process.env.PORT || 9000;
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://c2_chatbot:MnsrVpD7Fv2!GGt@ds237357.mlab.com:37357/heroku_f6wxmjw9", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, (ignore, connection) => {
     connection.onOpen();
-    console.log("mongo is connected");
+    console.log("mongo is bconnected");
 
 });
 
