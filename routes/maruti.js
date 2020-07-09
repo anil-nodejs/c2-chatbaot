@@ -204,67 +204,67 @@ function getstarted(senderID, user) {
 
 
 
-app.get('/open/:fbid/:story', (req, res) => {
-    let fbid = parseInt(req.params.fbid) || 0;
-    let story = req.params.story || null;
-    console.log("fbid", fbid, "story", story);
+// app.get('/open/:fbid/:story', (req, res) => {
+//     let fbid = parseInt(req.params.fbid) || 0;
+//     let story = req.params.story || null;
+//     console.log("fbid", fbid, "story", story);
 
-    const data = {
-        "Mission_Green_Million_lnk": "https://www.marutisuzuki.com/auto-expo-2020/mission-green-million.html",
-        "Venue_of_Auto_Expo_lnk": "https://goo.gl/maps/e3WgR91vRNkroHLe6",
-        "Dates_Timings_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
-        "Book_My_Tickets_lnk": "https://in.bookmyshow.com/national-capital-region-ncr/events/auto-expo-the-motor-show-2020/ET00118921",
-        "Ignis_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Brezza_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Swift_Hybrid_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Jimny_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Concept_FUTURO_e_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "About_Maruti_Suzuki_Studio_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
-        "Studio_Spotlight_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
-        "Twitter_Green_Room_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
-        "Studio_Schedule_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
-        "Ertiga_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "S_presso_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "WagonR_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Celerio_X_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Vitara_Brezza_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "EECO_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Celerio_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Alto_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Swift_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "DZire_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Ignis_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "XL6_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "S_Cross_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Baleno_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Ciaz_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
-        "Maruti_Suzuki_Arena_btn_lnk": "https://www.marutisuzuki.com/corporate/reach-us/contact-us#write-to-us",
-        "Maruti_Suzuki_Nexa_btn_lnk": "https://www.nexaexperience.com/contact-us/",
-        "Maruti_Suzuki_True_Value_btn_lnk": "https://www.marutisuzukitruevalue.com/contact",
-        "Maruti_Suzuki_Commercial_btn_lnk": "http://www.marutisuzukicommercial.com/#enq_popup",
-        "Maruti_Suzuki_Arena_loc_btn_lnk": "https://www.marutisuzuki.com/channels/arena/locate-a-dealer",
-        "Maruti_Suzuki_Nexa_loc_btn_lnk": "https://www.nexaexperience.com/showroom-locator/",
-        "Maruti_Suzuki_True_Value_loc_btn_lnk": "https://www.marutisuzukitruevalue.com/dealerlocator/",
-        "Maruti_Suzuki_Commercial_loc_btn_lnk": "http://www.marutisuzukicommercial.com/find-dealer.html",
-        "About_Maruti_Suzuki_btn_lnk": "https://www.marutisuzuki.com/corporate/about-us",
-        "Maruti_Suzuki_Arena_about_btn_lnk": "https://www.marutisuzuki.com/channels/arena/all-cars",
-        "Maruti_Suzuki_Nexa_about_btn_lnk": "https://www.nexaexperience.com/",
-        "Maruti_Suzuki_True_Value_about_btn_lnk": "https://www.marutisuzukitruevalue.com/",
-        "Maruti_Suzuki_Commercial_about_btn_lnk": "http://www.marutisuzukicommercial.com/"
-    };
+//     const data = {
+//         "Mission_Green_Million_lnk": "https://www.marutisuzuki.com/auto-expo-2020/mission-green-million.html",
+//         "Venue_of_Auto_Expo_lnk": "https://goo.gl/maps/e3WgR91vRNkroHLe6",
+//         "Dates_Timings_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
+//         "Book_My_Tickets_lnk": "https://in.bookmyshow.com/national-capital-region-ncr/events/auto-expo-the-motor-show-2020/ET00118921",
+//         "Ignis_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Brezza_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Swift_Hybrid_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Jimny_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Concept_FUTURO_e_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "About_Maruti_Suzuki_Studio_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
+//         "Studio_Spotlight_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
+//         "Twitter_Green_Room_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
+//         "Studio_Schedule_lnk": "https://www.marutisuzuki.com/auto-expo-2020/studio.html",
+//         "Ertiga_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "S_presso_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "WagonR_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Celerio_X_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Vitara_Brezza_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "EECO_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Celerio_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Alto_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Swift_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "DZire_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Ignis_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "XL6_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "S_Cross_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Baleno_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Ciaz_Nexa_btn_lnk": "https://www.marutisuzuki.com/auto-expo-2020/our-showcase.html",
+//         "Maruti_Suzuki_Arena_btn_lnk": "https://www.marutisuzuki.com/corporate/reach-us/contact-us#write-to-us",
+//         "Maruti_Suzuki_Nexa_btn_lnk": "https://www.nexaexperience.com/contact-us/",
+//         "Maruti_Suzuki_True_Value_btn_lnk": "https://www.marutisuzukitruevalue.com/contact",
+//         "Maruti_Suzuki_Commercial_btn_lnk": "http://www.marutisuzukicommercial.com/#enq_popup",
+//         "Maruti_Suzuki_Arena_loc_btn_lnk": "https://www.marutisuzuki.com/channels/arena/locate-a-dealer",
+//         "Maruti_Suzuki_Nexa_loc_btn_lnk": "https://www.nexaexperience.com/showroom-locator/",
+//         "Maruti_Suzuki_True_Value_loc_btn_lnk": "https://www.marutisuzukitruevalue.com/dealerlocator/",
+//         "Maruti_Suzuki_Commercial_loc_btn_lnk": "http://www.marutisuzukicommercial.com/find-dealer.html",
+//         "About_Maruti_Suzuki_btn_lnk": "https://www.marutisuzuki.com/corporate/about-us",
+//         "Maruti_Suzuki_Arena_about_btn_lnk": "https://www.marutisuzuki.com/channels/arena/all-cars",
+//         "Maruti_Suzuki_Nexa_about_btn_lnk": "https://www.nexaexperience.com/",
+//         "Maruti_Suzuki_True_Value_about_btn_lnk": "https://www.marutisuzukitruevalue.com/",
+//         "Maruti_Suzuki_Commercial_about_btn_lnk": "http://www.marutisuzukicommercial.com/"
+//     };
 
-    if (data[story]) {
-        User.findOneAndUpdate(
-            { fbid: fbid },
-            { $inc: { [story]: 1 } },
-            { upsert: false },
-            (err, user) => {
-            });
-        res.redirect(data[story]);
-    } else {
-        res.redirect("https://www.marutisuzuki.com/auto-expo-2020/");
-    }
-});
+//     if (data[story]) {
+//         User.findOneAndUpdate(
+//             { fbid: fbid },
+//             { $inc: { [story]: 1 } },
+//             { upsert: false },
+//             (err, user) => {
+//             });
+//         res.redirect(data[story]);
+//     } else {
+//         res.redirect("https://www.marutisuzuki.com/auto-expo-2020/");
+//     }
+// });
 
 function deliveryReport(senderID) {
     User.findOne({ fbid: senderID }).exec((err, user) => {
@@ -451,64 +451,64 @@ function sendItems(senderID, Obj) {
     let data = {};
 
     /* Level 1 */
-    data.level_1Obj = {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": [
-                    {
-                        "title": "What's happening at Auto Expo 2020",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/1.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "whats_happening"
-                            }
-                        ]
-                    },
-                    //Eralier All Maruti Suzuki Cars
-                    {
-                        "title": "Browse Car Models",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/9.jpg?v=1",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "all_maruti_suzuki_cars"
-                            }
-                        ]
-                    },
+    // data.level_1Obj = {
+    //     "attachment": {
+    //         "type": "template",
+    //         "payload": {
+    //             "template_type": "generic",
+    //             "elements": [
+    //                 {
+    //                     "title": "What's happening at Auto Expo 2020",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/1.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "whats_happening"
+    //                         }
+    //                     ]
+    //                 },
+    //                 //Eralier All Maruti Suzuki Cars
+    //                 {
+    //                     "title": "Browse Car Models",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/9.jpg?v=1",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "all_maruti_suzuki_cars"
+    //                         }
+    //                     ]
+    //                 },
 
-                    {
-                        "title": "Enquiries & Other Details",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/10.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "enquiries"
-                            }
-                        ]
-                    },
+    //                 {
+    //                     "title": "Enquiries & Other Details",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/10.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "enquiries"
+    //                         }
+    //                     ]
+    //                 },
 
-                    {
-                        "title": "Know more About Us",
-                        "image_url": "https://c2-chatbot.herokuapp.com/images/11.jpg",
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "Explore",
-                                "payload": "know_more_about_us"
-                            }
-                        ],
+    //                 {
+    //                     "title": "Know more About Us",
+    //                     "image_url": "https://c2-chatbot.herokuapp.com/images/11.jpg",
+    //                     "buttons": [
+    //                         {
+    //                             "type": "postback",
+    //                             "title": "Explore",
+    //                             "payload": "know_more_about_us"
+    //                         }
+    //                     ],
 
-                    }
-                ]
-            }
-        }
-    };
+    //                 }
+    //             ]
+    //         }
+    //     }
+    // };
 
     /* Level 2 */
 
