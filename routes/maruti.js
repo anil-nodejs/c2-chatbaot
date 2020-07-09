@@ -1036,9 +1036,9 @@ function postbackRequest(senderID, eventAction, user) {
                 }, 500);
             });
     }
-    else {
-        defaultMessage(senderID);
-    }
+    // else {
+    //     defaultMessage(senderID);
+    // }
 }
 
 // function defaultMessage(senderID) {
