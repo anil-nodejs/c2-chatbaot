@@ -20,8 +20,7 @@ app.get('/', (req, res) => {
 })
 const marutiRoute = require('./routes/m3333.js');
 app.use('/maruti', marutiRoute);
-// end pathfredsdedv
-
+// end pathfredsdedvfdfcr
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
