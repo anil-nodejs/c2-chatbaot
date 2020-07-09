@@ -10,7 +10,7 @@ const User = require('../models/User');
 app.get('/count/:fieldName/:key', (req, res) => {
     let fieldName = req.params.fieldName || null;
     let key = req.params.key || null;
-    if (key == "hdniewnfciejfcie") {
+    if (key == "!#ch@tBOt202083Kwjs") {
         if (fieldName == "total") {
             User.countDocuments({}, function (err, count) {
                 if (!err) {
@@ -31,7 +31,27 @@ app.get('/count/:fieldName/:key', (req, res) => {
     }
 });
 
+app.get('/total/:fieldName/:key', (req, res) => {
+    let fieldName = req.params.fieldName || null;
+    let key = req.params.key || null;
+    let columnName = ''
+    if (key == '!#ch@tBOt202083Kwjs') {
+        if (fieldName != null) {
+            columnName = "$" + fieldName
+        }
+        if (columnName != '') {
+            User.aggregate([
+                { $match: {} },
+                { $group: { _id: null, total_count: { $sum: columnName } } }
+            ]).exec(function (err, data) {
+                if (!err) {
+                    return res.send(data[0].total_count.toString())
+                }
+            })
+        }
+    }
 
+});
 
 
 module.exports = app;
