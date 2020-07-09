@@ -166,7 +166,7 @@ function getstarted(senderID, user) {
     sendTextMessage(senderID, "Hey " + user.first_name + "! It's that time of the year again. We are back with our presence at Auto Expo. Tell us, what would you like to know");
 
     setTimeout(() => {
-        sendItems(senderID, 'level_1Obj');
+        sendItems(senderID, '');
     }, 500);
 }
 
@@ -358,7 +358,7 @@ function postbackRequest(senderID, eventAction, user) {
             { $inc: { "back_to_home": 1 } },
             { upsert: false },
             (err, user) => {
-                sendItems(senderID, "level_1Obj");
+                sendItems(senderID, "");
             });
     }
     else if (eventAction == "whats_happening") {
@@ -1042,7 +1042,7 @@ function postbackRequest(senderID, eventAction, user) {
 }
 
 function defaultMessage(senderID) {
-    sendItems(senderID, "level_1Obj");
+    // sendItems(senderID, "level_1Obj");
 }
 
 function sendTextMessage(recipientId, messageText) {
