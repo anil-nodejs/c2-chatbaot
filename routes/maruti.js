@@ -2,9 +2,12 @@ const bodyParser = require('body-parser'),
     express = require('express'),
     request = require('request'),
     rp = require('request-promise');
-
+//Link URl
 const URL = 'https://c2-chatbot.herokuapp.com/maruti/open/';
+
+//Image URL
 var imageURL = 'https://c2-chatbot.herokuapp.com/images'
+
 const app = express.Router();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -14,7 +17,7 @@ app.use(bodyParser.urlencoded({
 const access_token = "EAApXxrxbGs0BAH8iGRovQZADBVjlkW9ZBWzVTyWrdXNspxwKmV7qE1hNMuOgw5yDkBrO7G0ZAZBkaeZAXLE9pxqcSt1dI2KiacXJ2ZAEpvqDNcITPS9aNGWmz4noyHl9uyQUJZA6QZArRfveGdSi27G0IPbXxZBv5PFHjZC3k7KZA7Xzp9cZA6CxkCPm";
 const User = require('../models/User');
 
-//To add Get Started buttongrtgvtrgv
+// Get Started
 app.get('/getStarted', (req, res) => {
     res.status(200).send("getStarted");
     rp({
@@ -32,6 +35,8 @@ app.get('/getStarted', (req, res) => {
         }
     });
 });
+
+
 
 //To add persistent menu
 app.get('/menu', (req, res) => {
@@ -1571,7 +1576,7 @@ function sendItems(senderID, Obj) {
                     // "title": "Ignis",
                     {
                         "title": "All-new Ignis",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Ignis.jpg",
+                        "image_url": imageURL + "/Ignis.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1589,7 +1594,7 @@ function sendItems(senderID, Obj) {
                     //"title": "Brezza",
                     {
                         "title": "All-new Vitara Brezza",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Vitara-Brezza.jpg",
+                        "image_url": imageURL + "/Vitara-Brezza.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1613,7 +1618,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "771112573374479"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Ignis.jpg",
+                /* "url": "/Ignis.jpg",
                 "is_reusable": true */
             }
         }
@@ -1624,7 +1629,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "198071828035868"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Vitara-Brezza.jpg",
+                /* "url": "/Vitara-Brezza.jpg",
                 "is_reusable": true */
             }
         }
@@ -1685,7 +1690,7 @@ function sendItems(senderID, Obj) {
                 "elements": [
                     {
                         "title": "Swift Hybrid",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Swift.jpg",
+                        "image_url": imageURL + "/Swift.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1702,7 +1707,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Jimny",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Jimny.jpg",
+                        "image_url": imageURL + "/Jimny.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1719,7 +1724,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Concept FUTURO-e",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/ConceptFUTURO-e.jpg",
+                        "image_url": imageURL + "/ConceptFUTURO-e.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1743,7 +1748,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "560201674561582"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Swift.jpg",
+                /* "url": "/Swift.jpg",
                 "is_reusable": true */
             }
         }
@@ -1777,7 +1782,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "2444142865840086"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Jimny.jpg",
+                /* "url": "/Jimny.jpg",
                 "is_reusable": true */
             }
         }
@@ -1811,7 +1816,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "822191921564206"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/ConceptFUTURO-e.jpg",
+                /* "url": "/ConceptFUTURO-e.jpg",
                 "is_reusable": true */
             }
         }
@@ -1848,7 +1853,7 @@ function sendItems(senderID, Obj) {
                 "elements": [
                     {
                         "title": "About Maruti Suzuki Studio",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/14.jpg",
+                        "image_url": imageURL + "/14.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1865,7 +1870,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Studio Spotlight",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/15.jpg",
+                        "image_url": imageURL + "/15.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1879,10 +1884,11 @@ function sendItems(senderID, Obj) {
                             }
                         ]
                     },
+
                     //"title": "Twitter Green Room",
                     {
                         "title": "Twitter Green Zone",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/16.jpg?v=1",
+                        "image_url": imageURL + "/16.jpg?v=1",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -1899,7 +1905,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Studio Schedule",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/17.jpg",
+                        "image_url": imageURL + "/17.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2020,7 +2026,7 @@ function sendItems(senderID, Obj) {
                 "elements": [
                     {
                         "title": "Ertiga",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Ertiga.jpg",
+                        "image_url": imageURL + "/Ertiga.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2037,7 +2043,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "S-presso",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/S-Presso.jpg",
+                        "image_url": imageURL + "/S-Presso.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2054,7 +2060,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "WagonR",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/WagonR.jpg",
+                        "image_url": imageURL + "/WagonR.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2071,7 +2077,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Celerio X",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Celerio-X.jpg",
+                        "image_url": imageURL + "/Celerio-X.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2088,7 +2094,7 @@ function sendItems(senderID, Obj) {
                     /* "title": "Vitara Brezza", */
                     {
                         "title": "All-new Vitara Brezza",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Vitara-Brezza.jpg",
+                        "image_url": imageURL + "/Vitara-Brezza.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2105,7 +2111,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "EECO",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/EECO.jpg",
+                        "image_url": imageURL + "/EECO.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2122,7 +2128,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Celerio",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Celerio.jpg",
+                        "image_url": imageURL + "/Celerio.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2139,7 +2145,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Alto",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Alto.jpg",
+                        "image_url": imageURL + "/Alto.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2156,7 +2162,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Swift",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Swift.jpg",
+                        "image_url": imageURL + "/Swift.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2173,7 +2179,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "DZire",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Dzire.jpg",
+                        "image_url": imageURL + "/Dzire.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2197,7 +2203,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "496551551046075"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Ertiga.jpg",
+                /* "url": "/Ertiga.jpg",
                 "is_reusable": true */
             }
         }
@@ -2231,7 +2237,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "1267771530084186"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/S-Presso.jpg",
+                /* "url": "/S-Presso.jpg",
                 "is_reusable": true */
             }
         }
@@ -2265,7 +2271,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "196602285074965"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/WagonR.jpg",
+                /* "url": /WagonR.jpg",
                 "is_reusable": true */
             }
         }
@@ -2299,7 +2305,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "170976660782314"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Celerio-X.jpg",
+                /* "url": "/Celerio-X.jpg",
                 "is_reusable": true */
             }
         }
@@ -2333,7 +2339,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "1423880804457592"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Vitara-Brezza.jpg",
+                /* "url": "/Vitara-Brezza.jpg",
                 "is_reusable": true */
             }
         }
@@ -2367,7 +2373,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "749554295538842"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/EECO.jpg",
+                /* "url": "/EECO.jpg",
                 "is_reusable": true */
             }
         }
@@ -2401,7 +2407,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "174486020426217"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Celerio.jpg",
+                /* "url": "/Celerio.jpg",
                 "is_reusable": true */
             }
         }
@@ -2435,7 +2441,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "481770149428058"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Alto.jpg",
+                /* "url": "/Alto.jpg",
                 "is_reusable": true */
             }
         }
@@ -2469,7 +2475,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "528906851060839"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Swift.jpg",
+                /* "url": "/Swift.jpg",
                 "is_reusable": true */
             }
         }
@@ -2503,7 +2509,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "584943535397055"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Dzire.jpg",
+                /* "url": "/Dzire.jpg",
                 "is_reusable": true */
             }
         }
@@ -2541,7 +2547,7 @@ function sendItems(senderID, Obj) {
                     /* "title": "Ignis", */
                     {
                         "title": "All-new Ignis",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Ignis.jpg",
+                        "image_url": imageURL + "/Ignis.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2558,7 +2564,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "XL6",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/XL6.jpg",
+                        "image_url": imageURL + "/XL6.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2575,7 +2581,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "S-Cross",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/S-Cross.jpg",
+                        "image_url": imageURL + "/S-Cross.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2592,7 +2598,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Baleno",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/baleno.jpg",
+                        "image_url": imageURL + "/baleno.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2609,7 +2615,7 @@ function sendItems(senderID, Obj) {
 
                     {
                         "title": "Ciaz",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Ciaz.jpg",
+                        "image_url": imageURL + "/Ciaz.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2634,7 +2640,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "771112573374479"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Ignis.jpg",
+                /* "url": "/Ignis.jpg",
                 "is_reusable": true */
             }
         }
@@ -2668,7 +2674,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "473658103328849"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/XL6.jpg",
+                /* "url": "/XL6.jpg",
                 "is_reusable": true */
             }
         }
@@ -2702,7 +2708,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "2439391982994209"
-                /*  "url": "https://maruti-auto-expo.herokuapp.com/S-Cross.jpg",
+                /*  "url": "/S-Cross.jpg",
                  "is_reusable": true */
             }
         }
@@ -2736,7 +2742,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "119357835962819"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/baleno.jpg",
+                /* "url": "/baleno.jpg",
                  "is_reusable": true */
             }
         }
@@ -2770,7 +2776,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "107737880643913"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Ciaz.jpg",
+                /* "url": "/Ciaz.jpg",
                 "is_reusable": true */
             }
         }
@@ -2811,7 +2817,7 @@ function sendItems(senderID, Obj) {
                 "elements": [
                     {
                         "title": "Maruti Suzuki Arena",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Arena.jpg",
+                        "image_url": imageURL + "/Arena.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2828,7 +2834,7 @@ function sendItems(senderID, Obj) {
                     //"title": "Maruti Suzuki Nexa",
                     {
                         "title": "Nexa",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Img.jpg",
+                        "image_url": imageURL + "/Img.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2844,7 +2850,7 @@ function sendItems(senderID, Obj) {
                     },
                     {
                         "title": "Maruti Suzuki True Value",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/TV---Showroom.jpg",
+                        "image_url": imageURL + "/TV---Showroom.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2860,7 +2866,7 @@ function sendItems(senderID, Obj) {
                     },
                     {
                         "title": "Maruti Suzuki Commercial",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Commercial.jpg",
+                        "image_url": imageURL + "/Commercial.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2885,7 +2891,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "550623935798754"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Arena.jpg",
+                /* "url": "/Arena.jpg",
                 "is_reusable": true */
             }
         }
@@ -2919,7 +2925,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "1276652252528515"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Img.jpg",
+                /* "url": "/Img.jpg",
                 "is_reusable": true */
             }
         }
@@ -2953,7 +2959,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "168297671085860"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/TV---Showroom.jpg",
+                /* "url": "/TV---Showroom.jpg",
                 "is_reusable": true */
             }
         }
@@ -2987,7 +2993,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "145279596916794"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Commercial.jpg",
+                /* "url": "/Commercial.jpg",
                 "is_reusable": true */
             }
         }
@@ -3026,7 +3032,7 @@ function sendItems(senderID, Obj) {
                 "elements": [
                     {
                         "title": "Maruti Suzuki Arena",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Arena.jpg",
+                        "image_url": imageURL + "/Arena.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -3043,7 +3049,7 @@ function sendItems(senderID, Obj) {
                     //"title": "Maruti Suzuki Nexa"
                     {
                         "title": "Nexa",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Img.jpg",
+                        "image_url": imageURL + "/Img.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -3059,7 +3065,7 @@ function sendItems(senderID, Obj) {
                     },
                     {
                         "title": "Maruti Suzuki True Value",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/TV---Showroom.jpg",
+                        "image_url": imageURL + "/TV---Showroom.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -3075,7 +3081,7 @@ function sendItems(senderID, Obj) {
                     },
                     {
                         "title": "Maruti Suzuki Commercial",
-                        "image_url": "https://maruti-auto-expo.herokuapp.com/Commercial.jpg",
+                        "image_url": imageURL + "/Commercial.jpg",
                         "buttons": [
                             {
                                 "type": "postback",
@@ -3099,7 +3105,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "550623935798754"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Arena.jpg",
+                /* "url": "/Arena.jpg",
                 "is_reusable": true */
             }
         }
@@ -3133,7 +3139,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "1276652252528515"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Img.jpg",
+                /* "url": "/Img.jpg",
                 "is_reusable": true */
             }
         }
@@ -3167,7 +3173,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "168297671085860"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/TV---Showroom.jpg",
+                /* "url": "/TV---Showroom.jpg",
                 "is_reusable": true */
             }
         }
@@ -3201,7 +3207,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "145279596916794"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Commercial.jpg",
+                /* "url": "/Commercial.jpg",
                 "is_reusable": true */
             }
         }
@@ -3237,7 +3243,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "2267491580216652"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/about_maruti.jpg",
+                /* "url": "/about_maruti.jpg",
                 "is_reusable": true */
             }
         }
@@ -3271,7 +3277,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "550623935798754"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Arena.jpg",
+                /* "url": "/Arena.jpg",
                 "is_reusable": true */
             }
         }
@@ -3305,7 +3311,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "1276652252528515"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Img.jpg",
+                /* "url": "/Img.jpg",
                 "is_reusable": true */
             }
         }
@@ -3339,7 +3345,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "168297671085860"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/TV---Showroom.jpg",
+                /* "url": "/TV---Showroom.jpg",
                 "is_reusable": true */
             }
         }
@@ -3373,7 +3379,7 @@ function sendItems(senderID, Obj) {
             "type": "image",
             "payload": {
                 "attachment_id": "145279596916794"
-                /* "url": "https://maruti-auto-expo.herokuapp.com/Commercial.jpg",
+                /* "url": "/Commercial.jpg",
                 "is_reusable": true */
             }
         }
