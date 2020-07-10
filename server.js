@@ -15,7 +15,7 @@ mongoose.connect(db, {
 //route set path
 
 app.get('/', (req, res) => {
-    res.send("Working...");
+    res.send("Working....");
 })
 const marutiRoute = require('./routes/maruti.js');
 app.use('/maruti', marutiRoute);
