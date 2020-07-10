@@ -148,10 +148,10 @@ app.post('/bot', (req, res) => {
                             else {
                                 if (event.postback != undefined && event.postback.payload != undefined) {
                                     eventAction = event.postback.payload;
-                                    postbackRequest(senderID, eventAction, user);
+                                    // postbackRequest(senderID, eventAction, user);
                                 }
                                 else {
-                                    defaultMessage(senderID);
+                                    // defaultMessage(senderID);
                                 }
                             }
                         }
