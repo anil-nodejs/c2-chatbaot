@@ -151,7 +151,7 @@ app.post('/bot', (req, res) => {
                                     postbackRequest(senderID, eventAction, user);
                                 }
                                 else {
-                                    // defaultMessage(senderID);
+                                    defaultMessage(senderID);
                                 }
                             }
                         }
@@ -335,7 +335,7 @@ function textMessageRequest(senderID, text) {
 }
 
 function attachmentsRequest(senderID, attachments, user) {
-    // defaultMessage(senderID);
+    defaultMessage(senderID);
 }
 
 function postbackRequest(senderID, eventAction, user) {
