@@ -334,9 +334,9 @@ function textMessageRequest(senderID, text) {
     }
 }
 
-// function attachmentsRequest(senderID, attachments, user) {
-//     defaultMessage(senderID);
-// }
+function attachmentsRequest(senderID, attachments, user) {
+    // defaultMessage(senderID);
+}
 
 function postbackRequest(senderID, eventAction, user) {
     if (eventAction == "getStarted") {
