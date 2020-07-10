@@ -7,12 +7,15 @@ const port = process.env.PORT || 9000;
 
 //database
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://c2_chatbot:MnsrVpD7Fv2!GGt@ds237357.mlab.com:37357/heroku_f6wxmjw9", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, (ignore, connection) => {
-    connection.onOpen();
-    console.log("mongo is bconnected");
+// mongoose.connect("mongodb://c2_chatbot:MnsrVpD7Fv2!GGt@ds237357.mlab.com:37357/heroku_f6wxmjw9", { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }, (ignore, connection) => {
+//     connection.onOpen();
+//     console.log("mongo is bconnected");
 
+// });
+mongoose.connect('mongodb+srv://sbycc2020:' + encodeURIComponent('sbycc@anilyadav21') + '@mongodb01-z7hcd.mongodb.net/c2chatbot?retryWrites=true', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
-
 //route set path
 
 app.get('/', (req, res) => {
