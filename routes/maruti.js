@@ -148,7 +148,7 @@ app.post('/bot', (req, res) => {
                             else {
                                 if (event.postback != undefined && event.postback.payload != undefined) {
                                     eventAction = event.postback.payload;
-                                    // postbackRequest(senderID, eventAction, user);
+                                    postbackRequest(senderID, eventAction, user);
                                 }
                                 else {
                                     // defaultMessage(senderID);
@@ -278,28 +278,28 @@ function getData(senderID) {
         });
 }
 
-function getData1(senderID) {
-    rp({
-        uri: 'https://graph.facebook.com/v4.0/' + senderID,
-        qs: {
-            access_token: access_token,
-            fields: 'first_name,last_name'
-        },
-        method: 'GET'
-    })
-        .then(response => {
-            let data = JSON.parse(response);
-            User.findOneAndUpdate(
-                { fbid: senderID },
-                { $set: { "first_name": data.first_name, "last_name": data.last_name } },
-                { upsert: false },
-                (err, user) => {
-                });
-        })
-        .catch(error => {
+// function getData1(senderID) {
+//     rp({
+//         uri: 'https://graph.facebook.com/v4.0/' + senderID,
+//         qs: {
+//             access_token: access_token,
+//             fields: 'first_name,last_name'
+//         },
+//         method: 'GET'
+//     })
+//         .then(response => {
+//             let data = JSON.parse(response);
+//             User.findOneAndUpdate(
+//                 { fbid: senderID },
+//                 { $set: { "first_name": data.first_name, "last_name": data.last_name } },
+//                 { upsert: false },
+//                 (err, user) => {
+//                 });
+//         })
+//         .catch(error => {
 
-        });
-}
+//         });
+// }
 
 function quickReplyRequest(senderID, eventAction) {
     if (eventAction == "pic_count_2") {
