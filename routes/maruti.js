@@ -329,9 +329,9 @@ function textMessageRequest(senderID, text) {
             function (err, user) {
             });
     }
-    else {
-        defaultMessage(senderID);
-    }
+    // else {
+    //     defaultMessage(senderID);
+    // }
 }
 
 function attachmentsRequest(senderID, attachments, user) {
@@ -339,15 +339,15 @@ function attachmentsRequest(senderID, attachments, user) {
 }
 
 function postbackRequest(senderID, eventAction, user) {
-    // if (eventAction == "getStarted") {
-    //     getstarted(senderID, user);
-    //     User.findOneAndUpdate(
-    //         { fbid: senderID },
-    //         { $inc: { "getstarted_clicks": 1 } },
-    //         { upsert: false },
-    //         function (err, user) {
-    //         });
-    // }
+    if (eventAction == "getStarted") {
+        getstarted(senderID, user);
+        User.findOneAndUpdate(
+            { fbid: senderID },
+            { $inc: { "getstarted_clicks": 1 } },
+            { upsert: false },
+            function (err, user) {
+            });
+    }
     if (eventAction == "restart") {
         getstarted(senderID, user);
         User.findOneAndUpdate(
