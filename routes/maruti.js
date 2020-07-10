@@ -329,14 +329,14 @@ function textMessageRequest(senderID, text) {
             function (err, user) {
             });
     }
-    // else {
-    //     defaultMessage(senderID);
-    // }
+    else {
+        defaultMessage(senderID);
+    }
 }
 
-function attachmentsRequest(senderID, attachments, user) {
-    defaultMessage(senderID);
-}
+// function attachmentsRequest(senderID, attachments, user) {
+//     defaultMessage(senderID);
+// }
 
 function postbackRequest(senderID, eventAction, user) {
     if (eventAction == "getStarted") {
