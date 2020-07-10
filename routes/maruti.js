@@ -1046,9 +1046,9 @@ function postbackRequest(senderID, eventAction, user) {
     // }
 }
 
-// function defaultMessage(senderID) {
-//     sendItems(senderID, "");
-// }
+function defaultMessage(senderID) {
+    sendItems(senderID, "");
+}
 
 function sendTextMessage(recipientId, messageText) {
     let messageData = {
