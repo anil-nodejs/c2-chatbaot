@@ -4,8 +4,8 @@
 //     mongoDB_URL: db_Link
 // }
 
-db_Link = 'mongodb://c2_chatbot:$zN@U@gdCVdL#2t@ds021182.mlab.com:21182/heroku_19sv2vb4';
-module.exports =
-{
-    mongoDB_URL: db_Link
-}
+// db_Link = 'mongodb://c2_chatbot:$zN@U@gdCVdL#2t@ds021182.mlab.com:21182/heroku_19sv2vb4';
+// module.exports =
+// {
+//     mongoDB_URL: db_Link
+// }
