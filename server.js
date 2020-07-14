@@ -8,11 +8,9 @@ const port = process.env.PORT || 9000;
 
 //database
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://c2_chatbot:$zN@U@gdCVdL#2t@ds021182.mlab.com:21182/heroku_19sv2vb4', {
+mongoose.connect(db, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-}, (connection) => {
-    connection.onOpen();
 });
 //route set path
 
